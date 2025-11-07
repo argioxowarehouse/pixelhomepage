@@ -87,8 +87,7 @@
             animation: fadeInSlideUp 0.8s ease-out 0.6s forwards; /* Delay 0.6 detik */
             opacity: 0;
         }
-        /* ------------------------------------- */
-
+        
     </style>
 </head>
 <body class="bg-gray-50 font-sans text-gray-800">
@@ -97,9 +96,9 @@
     <header class="sticky top-0 z-50 bg-primary-theme shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <!-- Logo/Brand (UPDATED: Jarak diperkecil (space-x-1) & struktur teks diperbaiki) -->
+                <!-- Logo/Brand (Jarak diperkecil (space-x-1) & struktur teks diperbaiki) -->
                 <a href="#home" class="flex items-center space-x-4 text-2xl font-extrabold text-white hover:text-gray-200 transition duration-300">
-                    <!-- SVG Sisir dan Gunting (Dikonfirmasi ulang) -->
+                    <!-- SVG Sisir dan Gunting -->
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315.78 283.21" fill="white" class="h-8 w-8">
                         <path class="cls-1" d="M315.78,101.73v.82c0,68.24-52.5,104.19-124.45,104.19h-39.7v76.47h-76.47v-99.32h-35.13v-40h35.13v-76.47h76.47v76.47h38.06c28.54,0,45.87-14.87,45.87-37.63v-.82c0-24.79-17.33-38.02-46.3-38.02h-37.63V0h43.84c73.2,0,120.31,37.63,120.31,101.73Z"/>
                         <rect class="cls-1" x="31.53" y=".79" width="54.96" height="54.96"/>
@@ -162,7 +161,7 @@
             </div>
         </section>
 
-        <!-- 3. About Us Section (UPDATED: Logo/Icon diganti Gambar) -->
+        <!-- 3. About Us Section (KEMBALI KE SINGLE IMAGE) -->
         <section id="about" class="py-16 sm:py-24 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
@@ -185,12 +184,13 @@
                             </li>
                         </ul>
                     </div>
-                    <!-- Gambar Placeholder Barbershop -->
+                    
+                    <!-- Gambar Placeholder Barbershop (Single Image) -->
                     <div class="overflow-hidden rounded-xl shadow-xl border border-gray-200">
                         <img 
                             src="https://placehold.co/1920x1080/0c7565/FFFFFF/png?text=Pixel+Barbershop+Interior+Modern" 
                             alt="Interior Barbershop Modern" 
-                            class="w-full h-auto object-cover transform transition duration-500 hover:scale-105"
+                            class="w-full h-auto object-cover transform transition duration-500 hover:scale-105 rounded-lg aspect-video"
                         >
                     </div>
                 </div>
@@ -265,18 +265,18 @@
                 </div>
 
                 <!-- Tab/City Navigation (Updated count to 2) -->
-                <div class="mt-12 flex justify-center space-x-2 sm:space-x-4 border-b border-gray-300">
+                <div class="mt-12 flex flex justify-center space-x-2 sm:space-x-4 border-b border-gray-300">
                     <button id="tab-sukabumi" data-city="sukabumi" class="tab-button px-4 py-2 text-sm sm:text-base font-medium border-b-2 border-primary-theme text-primary-theme transition duration-300">
-                        Sukabumi (2)
+                        Sukabumi
                     </button>
                     <button id="tab-cianjur" data-city="cianjur" class="tab-button px-4 py-2 text-sm sm:text-base font-medium border-b-2 border-transparent text-gray-500 hover:border-gray-500 hover:text-secondary-dark transition duration-300">
-                        Cianjur (2)
+                        Cianjur
                     </button>
                     <button id="tab-bogor" data-city="bogor" class="tab-button px-4 py-2 text-sm sm:text-base font-medium border-b-2 border-transparent text-gray-500 hover:border-gray-500 hover:text-secondary-dark transition duration-300">
-                        Bogor (2)
+                        Bogor
                     </button>
                     <button id="tab-malang" data-city="malang" class="tab-button px-4 py-2 text-sm sm:text-base font-medium border-b-2 border-transparent text-gray-500 hover:border-gray-500 hover:text-secondary-dark transition duration-300">
-                        Malang (2)
+                        Malang
                     </button>
                 </div>
 
@@ -288,28 +288,56 @@
                         <!-- Cabang 1 Sukabumi -->
                         <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-primary-theme/20 flex flex-col justify-between">
                             <div class="mb-4 overflow-hidden rounded-lg">
-                                <img src="https://placehold.co/1920x1080/000000/FFFFFF/png?text=Pixel+Barbershop+Interior" alt="Cabang Barbershop" class="w-full h-auto object-cover rounded-lg transition duration-500 transform hover:scale-105">
+                                <img src="https://kontak.link/_next/image?url=https%3A%2F%2Fproduction-kontak-dot-link.s3.ap-southeast-1.amazonaws.com%2Fkontaklink-pro%2F2ycUOPH880spA3MvfBbEzPjoIK2%2Ficons%2F202506%2F17-ipjmy.png&w=1920&q=75" alt="Cabang Barbershop" class="w-full h-auto object-cover rounded-lg transition duration-500 transform hover:scale-105">
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold text-secondary-dark mb-2">Sukabumi - Kota A (Pusat)</h3>
-                                <p class="text-gray-600 mb-4 text-sm">Jl. Siliwangi No. 1, Kota Sukabumi</p>
-                                <p class="text-xs text-gray-500 mb-4">Buka: Setiap Hari (09:00 - 21:00)</p>
+                                <h3 class="text-xl font-bold text-secondary-dark mb-2">Pixel Barbershop Ciaul</h3>
+                                <p class="text-gray-600 mb-4 text-sm">Jl. R.A. Kosasih No.278, Subangjaya, Kec. Cikole, Kota Sukabumi, Sukabumi, Jawa Barat 43116</p>
+                                <p class="text-xs text-gray-500 mb-4">Buka: Setiap Hari (10:00 - 22:00)</p>
                             </div>
-                            <a href="https://maps.app.goo.gl/qWn7sR3rN1n2v4w5A" target="_blank" class="text-primary-theme hover:text-secondary-dark text-sm font-medium flex items-center mt-auto">
+                            <a href="https://maps.app.goo.gl/WumRND9YSrukkxBd8" target="_blank" class="text-primary-theme hover:text-secondary-dark text-sm font-medium flex items-center mt-auto">
                                 <span class="mr-1">&#128205;</span> Lihat di Google Maps
                             </a>
                         </div>
                         <!-- Cabang 2 Sukabumi -->
                         <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-primary-theme/20 flex flex-col justify-between">
                             <div class="mb-4 overflow-hidden rounded-lg">
-                                <img src="https://placehold.co/1920x1080/000000/FFFFFF/png?text=Pixel+Barbershop+Interior" alt="Cabang Barbershop" class="w-full h-auto object-cover rounded-lg transition duration-500 transform hover:scale-105">
+                                <img src="https://kontak.link/_next/image?url=https%3A%2F%2Fproduction-kontak-dot-link.s3.ap-southeast-1.amazonaws.com%2Fkontaklink-pro%2F2ycUOPH880spA3MvfBbEzPjoIK2%2Ficons%2F202506%2F17-vdie2.png&w=1920&q=75" alt="Cabang Barbershop" class="w-full h-auto object-cover rounded-lg transition duration-500 transform hover:scale-105">
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold text-secondary-dark mb-2">Sukabumi - Benda</h3>
-                                <p class="text-gray-600 mb-4 text-sm">Jl. Raya Sukabumi-Bogor KM 5</p>
+                                <h3 class="text-xl font-bold text-secondary-dark mb-2">Pixel Barbershop Sudirman</h3>
+                                <p class="text-gray-600 mb-4 text-sm">Jalan Jendral Sudirman, No.112 Benteng Warudoyong, Kota Sukabumi, Jawa Barat 43132</p>
                                 <p class="text-xs text-gray-500 mb-4">Buka: Setiap Hari (10:00 - 20:00)</p>
                             </div>
-                            <a href="https://maps.app.goo.gl/qWn7sR3rN1n2v4w5A" target="_blank" class="text-primary-theme hover:text-secondary-dark text-sm font-medium flex items-center mt-auto">
+                            <a href="https://maps.app.goo.gl/36dKH926pE9i8DKPA" target="_blank" class="text-primary-theme hover:text-secondary-dark text-sm font-medium flex items-center mt-auto">
+                                <span class="mr-1">&#128205;</span> Lihat di Google Maps
+                            </a>
+                        </div>
+                        <!-- Cabang 3 Sukabumi -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-primary-theme/20 flex flex-col justify-between">
+                            <div class="mb-4 overflow-hidden rounded-lg">
+                                <img src="https://kontak.link/_next/image?url=https%3A%2F%2Fproduction-kontak-dot-link.s3.ap-southeast-1.amazonaws.com%2Fkontaklink-pro%2F2ycUOPH880spA3MvfBbEzPjoIK2%2Ficons%2F202506%2F17-vdie2.png&w=1920&q=75" alt="Cabang Barbershop" class="w-full h-auto object-cover rounded-lg transition duration-500 transform hover:scale-105">
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-secondary-dark mb-2">Pixel Barbershop Sudirman</h3>
+                                <p class="text-gray-600 mb-4 text-sm">Jalan Jendral Sudirman, No.112 Benteng Warudoyong, Kota Sukabumi, Jawa Barat 43132</p>
+                                <p class="text-xs text-gray-500 mb-4">Buka: Setiap Hari (10:00 - 20:00)</p>
+                            </div>
+                            <a href="https://maps.app.goo.gl/36dKH926pE9i8DKPA" target="_blank" class="text-primary-theme hover:text-secondary-dark text-sm font-medium flex items-center mt-auto">
+                                <span class="mr-1">&#128205;</span> Lihat di Google Maps
+                            </a>
+                        </div>
+                        <!-- Cabang 4 Sukabumi -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-primary-theme/20 flex flex-col justify-between">
+                            <div class="mb-4 overflow-hidden rounded-lg">
+                                <img src="https://kontak.link/_next/image?url=https%3A%2F%2Fproduction-kontak-dot-link.s3.ap-southeast-1.amazonaws.com%2Fkontaklink-pro%2F2ycUOPH880spA3MvfBbEzPjoIK2%2Ficons%2F202506%2F17-vdie2.png&w=1920&q=75" alt="Cabang Barbershop" class="w-full h-auto object-cover rounded-lg transition duration-500 transform hover:scale-105">
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-secondary-dark mb-2">Pixel Barbershop Sudirman</h3>
+                                <p class="text-gray-600 mb-4 text-sm">Jalan Jendral Sudirman, No.112 Benteng Warudoyong, Kota Sukabumi, Jawa Barat 43132</p>
+                                <p class="text-xs text-gray-500 mb-4">Buka: Setiap Hari (10:00 - 20:00)</p>
+                            </div>
+                            <a href="https://maps.app.goo.gl/36dKH926pE9i8DKPA" target="_blank" class="text-primary-theme hover:text-secondary-dark text-sm font-medium flex items-center mt-auto">
                                 <span class="mr-1">&#128205;</span> Lihat di Google Maps
                             </a>
                         </div>
@@ -589,7 +617,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript untuk fungsionalitas menu mobile dan tab cabang -->
+    <!-- JavaScript untuk fungsionalitas menu mobile, tab cabang, dan SLIDER BARU -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const mobileMenuButton = document.getElementById('mobile-menu-button');

@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Barbershop | Gaya Klasik, Sentuhan Modern</title>
+    <!-- Memuat Tailwind CSS CDN untuk styling yang mudah dan responsif -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Konfigurasi Tailwind untuk mendefinisikan warna tema utama -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-theme': '#0c7565', // Warna Hijau Kebiruan (Deep Teal)
+                        'secondary-dark': '#063a33', // Warna lebih gelap untuk kontras
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Gaya tambahan untuk scroll halus */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* --- Animasi Background Slider (3 Gambar) --- */
+        @keyframes backgroundSlider {
+            /* Slide 1 */
+            0% { background-image: url('https://production-kontak-dot-link.s3.ap-southeast-1.amazonaws.com/kontaklink-pro/2ycUOPH880spA3MvfBbEzPjoIK2/images/202506/17-ei753.png'); }
+            30% { background-image: url('https://production-kontak-dot-link.s3.ap-southeast-1.amazonaws.com/kontaklink-pro/2ycUOPH880spA3MvfBbEzPjoIK2/images/202506/17-ei753.png'); }
+            
+            /* Fade ke Slide 2 */
+            33% { background-image: url('https://production-kontak-dot-link.s3.ap-southeast-1.amazonaws.com/kontaklink-pro/2ycUOPH880spA3MvfBbEzPjoIK2/images/202506/17-jdnxf.png'); }
+            
+            /* Slide 2 */
+            63% { background-image: url('https://production-kontak-dot-link.s3.ap-southeast-1.amazonaws.com/kontaklink-pro/2ycUOPH880spA3MvfBbEzPjoIK2/images/202506/17-jdnxf.png'); }
+            
+            /* Fade ke Slide 3 */
+            66% { background-image: url('https://production-kontak-dot-link.s3.ap-southeast-1.amazonaws.com/kontaklink-pro/2ycUOPH880spA3MvfBbEzPjoIK2/images/202506/17-k2a7w.png'); }
+            
+            /* Slide 3 */
+            96% { background-image: url('https://production-kontak-dot-link.s3.ap-southeast-1.amazonaws.com/kontaklink-pro/2ycUOPH880spA3MvfBbEzPjoIK2/images/202506/17-k2a7w.png'); }
+            
+            /* Kembali ke Slide 1 */
+            100% { background-image: url('https://production-kontak-dot-link.s3.ap-southeast-1.amazonaws.com/kontaklink-pro/2ycUOPH880spA3MvfBbEzPjoIK2/images/202506/17-ei753.png'); }
+        }
+
+        /* Terapkan background slider ke Hero Section */
+        #home-hero {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            animation: backgroundSlider 15s infinite ease-in-out; /* Total durasi 15 detik, 5 detik per slide */
+        }
+        
+        /* --- Animasi Saat Memuat Halaman (Tetap) --- */
+        @keyframes fadeInSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Terapkan animasi pada elemen di Hero Section */
+        .animate-hero-title {
+            animation: fadeInSlideUp 0.8s ease-out forwards;
+            opacity: 0; /* Mulai tersembunyi */
+        }
+
+        .animate-hero-tagline {
+            animation: fadeInSlideUp 0.8s ease-out 0.3s forwards; /* Delay 0.3 detik */
+            opacity: 0;
+        }
+
+        .animate-hero-button {
+            animation: fadeInSlideUp 0.8s ease-out 0.6s forwards; /* Delay 0.6 detik */
+            opacity: 0;
+        }
+        /* ------------------------------------- */
+
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+
+    <!-- 1. Navigation Bar (Sticky) -->
+    <header class="sticky top-0 z-50 bg-primary-theme shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Brand (UPDATED: Jarak diperkecil (space-x-1) & struktur teks diperbaiki) -->
+                <a href="#home" class="flex items-center space-x-4 text-2xl font-extrabold text-white hover:text-gray-200 transition duration-300">
+                    <!-- SVG Sisir dan Gunting (Dikonfirmasi ulang) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315.78 283.21" fill="white" class="h-8 w-8">
+                        <path class="cls-1" d="M315.78,101.73v.82c0,68.24-52.5,104.19-124.45,104.19h-39.7v76.47h-76.47v-99.32h-35.13v-40h35.13v-76.47h76.47v76.47h38.06c28.54,0,45.87-14.87,45.87-37.63v-.82c0-24.79-17.33-38.02-46.3-38.02h-37.63V0h43.84c73.2,0,120.31,37.63,120.31,101.73Z"/>
+                        <rect class="cls-1" x="31.53" y=".79" width="54.96" height="54.96"/>
+                        <rect class="cls-1" y="183.9" width="40.01" height="40.01"/>
+                        <rect class="cls-1" x=".4" y="113.78" width="29.37" height="29.37"/>
+                    </svg>
+                    <span>Pixel <span class="font-light">Barbershop</span></span>
+                </a>
+
+                <!-- Nav Links (Desktop) -->
+                <nav class="hidden md:flex space-x-2">
+                    <a href="#home" class="text-white hover:text-gray-200 px-3 py-2 text-sm font-medium transition duration-300 rounded-lg">Home</a>
+                    <a href="#about" class="text-white hover:text-gray-200 px-3 py-2 text-sm font-medium transition duration-300 rounded-lg">About Us</a>
+                    <a href="#services" class="text-white hover:text-gray-200 px-3 py-2 text-sm font-medium transition duration-300 rounded-lg">Services</a>
+                    <a href="#cabang" class="text-white hover:text-gray-200 px-3 py-2 text-sm font-medium transition duration-300 rounded-lg">Cabang</a>
+                    <a href="#careers" class="text-white hover:text-gray-200 px-3 py-2 text-sm font-medium transition duration-300 rounded-lg">Careers</a>
+                    <a href="#academy" class="text-white hover:text-gray-200 px-3 py-2 text-sm font-medium transition duration-300 rounded-lg">Academy</a>
+                    <a href="#contact" class="text-white hover:text-gray-200 px-3 py-2 text-sm font-medium transition duration-300 rounded-lg">Contact Us</a>
+                </nav>
+
+                <!-- Tombol Mobile Menu (Hanya terlihat di layar kecil) -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white hover:text-gray-200 focus:outline-none p-2 rounded-md">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Tersembunyi secara default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-secondary-dark/95 backdrop-blur-sm shadow-xl pb-3">
+            <a href="#home" class="block text-white hover:bg-primary-theme/70 px-3 py-2 text-base font-medium transition duration-300">Home</a>
+            <a href="#about" class="block text-white hover:bg-primary-theme/70 px-3 py-2 text-base font-medium transition duration-300">About Us</a>
+            <a href="#services" class="block text-white hover:bg-primary-theme/70 px-3 py-2 text-base font-medium transition duration-300">Services</a>
+            <a href="#cabang" class="block text-white hover:bg-primary-theme/70 px-3 py-2 text-base font-medium transition duration-300">Cabang</a>
+            <a href="#careers" class="block text-white hover:bg-primary-theme/70 px-3 py-2 text-base font-medium transition duration-300">Careers</a>
+            <a href="#academy" class="block text-white hover:bg-primary-theme/70 px-3 py-2 text-base font-medium transition duration-300">Academy</a>
+            <a href="#contact" class="block text-white hover:bg-primary-theme/70 px-3 py-2 text-base font-medium transition duration-300">Contact Us</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- 2. Home Section (Header Utama) -->
+        <section id="home-hero" class="relative py-24 sm:py-32 overflow-hidden">
+            <!-- Overlay untuk meningkatkan kontras teks -->
+            <div class="absolute inset-0 bg-secondary-dark/60 backdrop-brightness-75 transition-colors duration-1000"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <div class="text-white">
+                    <h1 class="text-4xl sm:text-6xl font-extrabold mb-4 leading-tight animate-hero-title">
+                        Gaya Klasik, Sentuhan Modern
+                    </h1>
+                    <p class="text-xl sm:text-2xl font-light mb-8 max-w-3xl mx-auto animate-hero-tagline">
+                        Di Pixel Barbershop, kami memadukan teknik cukur tradisional dengan tren gaya terkini.
+                    </p>
+                    <a href="#cabang" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-primary-theme bg-white hover:bg-gray-200 shadow-lg transition duration-300 transform hover:scale-105 animate-hero-button">
+                        Temukan Cabang Kami
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. About Us Section (UPDATED: Logo/Icon diganti Gambar) -->
+        <section id="about" class="py-16 sm:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                    <!-- Teks Deskripsi -->
+                    <div class="mb-10 lg:mb-0">
+                        <h2 class="text-base font-semibold text-primary-theme uppercase tracking-wider">TENTANG KAMI</h2>
+                        <p class="mt-2 text-3xl sm:text-4xl font-extrabold text-secondary-dark">Lebih dari Sekadar Cukur Rambut.</p>
+                        <p class="mt-4 text-lg text-gray-600">
+                            Pixel Barbershop didirikan pada tahun 2018 dengan visi untuk menciptakan ruang di mana pria dapat merawat diri dan bersantai. Kami percaya bahwa potongan rambut adalah bentuk ekspresi diri, dan setiap klien berhak mendapatkan perhatian detail yang sempurna.
+                        </p>
+                        <ul class="mt-6 space-y-3 text-gray-600">
+                            <li class="flex items-center">
+                                <span class="text-primary-theme mr-2 text-xl font-bold">&#9733;</span> Tukang Cukur Bersertifikat
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-primary-theme mr-2 text-xl font-bold">&#9733;</span> Peralatan Steril dan Modern
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-primary-theme mr-2 text-xl font-bold">&#9733;</span> Atmosfer Santai & Nyaman
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Gambar Placeholder Barbershop -->
+                    <div class="overflow-hidden rounded-xl shadow-xl border border-gray-200">
+                        <img 
+                            src="https://placehold.co/1920x1080/0c7565/FFFFFF/png?text=Pixel+Barbershop+Interior+Modern" 
+                            alt="Interior Barbershop Modern" 
+                            class="w-full h-auto object-cover transform transition duration-500 hover:scale-105"
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Our Service Section -->
+        <section id="services" class="py-16 sm:py-24 bg-primary-theme/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-base font-semibold text-primary-theme uppercase tracking-wider">LAYANAN KAMI</h2>
+                    <p class="mt-2 text-3xl sm:text-4xl font-extrabold text-secondary-dark">Temukan Layanan Terbaik untuk Gaya Anda.</p>
+                </div>
+
+                <div class="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Kategori 1: Haircut -->
+                    <div class="bg-white p-8 rounded-xl shadow-xl border-t-8 border-primary-theme transform transition duration-300 hover:shadow-2xl">
+                        <h3 class="text-2xl font-bold text-secondary-dark mb-4 border-b pb-2">Haircut</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex justify-between items-center py-1 border-b border-gray-100 last:border-b-0">CUKUR DEWASA <span class="text-sm font-medium text-primary-theme">&#9733;</span></li>
+                            <li class="flex justify-between items-center py-1 border-b border-gray-100 last:border-b-0">CUKUR DEWASA & CUCI <span class="text-sm font-medium text-primary-theme">&#9733;</span></li>
+                            <li class="flex justify-between items-center py-1 border-b border-gray-100 last:border-b-0">CUKUR ANAK <span class="text-sm font-medium text-primary-theme">&#9733;</span></li>
+                            <li class="flex justify-between items-center py-1 border-b border-gray-100 last:border-b-0">CUKUR ANAK & CUCI <span class="text-sm font-medium text-primary-theme">&#9733;</span></li>
+                            <li class="flex justify-between items-center py-1 border-b border-gray-100 last:border-b-0">CUKUR BOTAK <span class="text-sm font-medium text-primary-theme">&#9733;</span></li>
+                            <li class="flex justify-between items-center py-1 border-b border-gray-100 last:border-b-0">CUKUR JENGGOT <span class="text-sm font-medium text-primary-theme">&#9733;</span></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Kategori 2: Treatment -->
+                    <div class="bg-white p-8 rounded-xl shadow-xl border-t-8 border-primary-theme transform transition duration-300 hover:shadow-2xl">
+                        <h3 class="text-2xl font-bold text-secondary-dark mb-4 border-b pb-2">Treatment</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex justify-between items-center py-1 border-b border-gray-100 last:border-b-0">CREAMBATH <span class="text-sm font-medium text-primary-theme">&#9733;</span></li>
+                            <li class="flex justify-between items-center py-1 border-b border-gray-100 last:border-b-0">MASKER RAMBUT <span class="text-sm font-medium text-primary-theme">&#9733;</span></li>
+                            <li class="flex justify-between items-center py-1 border-b border-gray-100 last:border-b-0">DOWN PERM <span class="text-sm font-medium text-primary-theme">&#9733;</span></li>
+                            <li class="flex justify-between items-center py-1 border-b border-gray-100 last:border-b-0">ROOT LIFT <span class="text-sm font-medium text-primary-theme">&#9733;</span></li>
+                            <li class="flex justify-between items-center py-1 border-b border-gray-100 last:border-b-0">KERITING <span class="text-sm font-medium text-primary-theme">&#9733;</span></li>
+                            <li class="flex justify-between items-center py-1 border-b border-gray-100 last:border-b-0">SMOOTHING <span class="text-sm font-medium text-primary-theme">&#9733;</span></li>
+                            <li class="flex justify-between items-center py-1 border-b border-gray-100 last:border-b-0">KOREAN PERM <span class="text-sm font-medium text-primary-theme">&#9733;</span></li>
+                            <li class="flex justify-between items-center py-1 border-b border-gray-100 last:border-b-0">CUCI & STYLE <span class="text-sm font-medium text-primary-theme">&#9733;</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Kategori 3: Hair Fashion -->
+                    <div class="bg-white p-8 rounded-xl shadow-xl border-t-8 border-primary-theme transform transition duration-300 hover:shadow-2xl">
+                        <h3 class="text-2xl font-bold text-secondary-dark mb-4 border-b pb-2">Hair Fashion</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex justify-between items-center py-1 border-b border-gray-100 last:border-b-0">SEMIR HITAM <span class="text-sm font-medium text-primary-theme">&#9733;</span></li>
+                            <li class="flex justify-between items-center py-1 border-b border-gray-100 last:border-b-0">WARNA RAMBUT <span class="text-sm font-medium text-primary-theme">&#9733;</span></li>
+                            <li class="flex justify-between items-center py-1 border-b border-gray-100 last:border-b-0">HIGHLIGTING <span class="text-sm font-medium text-primary-theme">&#9733;</span></li>
+                            <li class="flex justify-between items-center py-1 border-b border-gray-100 last:border-b-0">COLOR RELOAD <span class="text-sm font-medium text-primary-theme">&#9733;</span></li>
+                            <li class="flex justify-between items-center py-1 border-b border-gray-100 last:border-b-0">SEMIR JENGGOT <span class="text-sm font-medium text-primary-theme">&#9733;</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-12 text-center">
+                    <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-primary-theme hover:bg-secondary-dark shadow-lg transition duration-300 transform hover:scale-105">
+                        Booking Sekarang
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 5. Cabang (Locations) Section -->
+        <section id="cabang" class="py-16 sm:py-24 bg-primary-theme/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-base font-semibold text-primary-theme uppercase tracking-wider">LOKASI KAMI</h2>
+                    <p class="mt-2 text-3xl sm:text-4xl font-extrabold text-secondary-dark">Temukan Barbershop Terdekat Anda.</p>
+                </div>
+
+                <!-- Tab/City Navigation (Updated count to 2) -->
+                <div class="mt-12 flex justify-center space-x-2 sm:space-x-4 border-b border-gray-300">
+                    <button id="tab-sukabumi" data-city="sukabumi" class="tab-button px-4 py-2 text-sm sm:text-base font-medium border-b-2 border-primary-theme text-primary-theme transition duration-300">
+                        Sukabumi (2)
+                    </button>
+                    <button id="tab-cianjur" data-city="cianjur" class="tab-button px-4 py-2 text-sm sm:text-base font-medium border-b-2 border-transparent text-gray-500 hover:border-gray-500 hover:text-secondary-dark transition duration-300">
+                        Cianjur (2)
+                    </button>
+                    <button id="tab-bogor" data-city="bogor" class="tab-button px-4 py-2 text-sm sm:text-base font-medium border-b-2 border-transparent text-gray-500 hover:border-gray-500 hover:text-secondary-dark transition duration-300">
+                        Bogor (2)
+                    </button>
+                    <button id="tab-malang" data-city="malang" class="tab-button px-4 py-2 text-sm sm:text-base font-medium border-b-2 border-transparent text-gray-500 hover:border-gray-500 hover:text-secondary-dark transition duration-300">
+                        Malang (2)
+                    </button>
+                </div>
+
+                <!-- Content Area -->
+                <div id="cabang-content" class="mt-8">
+                    
+                    <!-- Sukabumi Content (Default Active - 2 Cabang) -->
+                    <div id="content-sukabumi" class="city-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        <!-- Cabang 1 Sukabumi -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-primary-theme/20 flex flex-col justify-between">
+                            <div class="mb-4 overflow-hidden rounded-lg">
+                                <img src="https://placehold.co/1920x1080/000000/FFFFFF/png?text=Pixel+Barbershop+Interior" alt="Cabang Barbershop" class="w-full h-auto object-cover rounded-lg transition duration-500 transform hover:scale-105">
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-secondary-dark mb-2">Sukabumi - Kota A (Pusat)</h3>
+                                <p class="text-gray-600 mb-4 text-sm">Jl. Siliwangi No. 1, Kota Sukabumi</p>
+                                <p class="text-xs text-gray-500 mb-4">Buka: Setiap Hari (09:00 - 21:00)</p>
+                            </div>
+                            <a href="https://maps.app.goo.gl/qWn7sR3rN1n2v4w5A" target="_blank" class="text-primary-theme hover:text-secondary-dark text-sm font-medium flex items-center mt-auto">
+                                <span class="mr-1">&#128205;</span> Lihat di Google Maps
+                            </a>
+                        </div>
+                        <!-- Cabang 2 Sukabumi -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-primary-theme/20 flex flex-col justify-between">
+                            <div class="mb-4 overflow-hidden rounded-lg">
+                                <img src="https://placehold.co/1920x1080/000000/FFFFFF/png?text=Pixel+Barbershop+Interior" alt="Cabang Barbershop" class="w-full h-auto object-cover rounded-lg transition duration-500 transform hover:scale-105">
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-secondary-dark mb-2">Sukabumi - Benda</h3>
+                                <p class="text-gray-600 mb-4 text-sm">Jl. Raya Sukabumi-Bogor KM 5</p>
+                                <p class="text-xs text-gray-500 mb-4">Buka: Setiap Hari (10:00 - 20:00)</p>
+                            </div>
+                            <a href="https://maps.app.goo.gl/qWn7sR3rN1n2v4w5A" target="_blank" class="text-primary-theme hover:text-secondary-dark text-sm font-medium flex items-center mt-auto">
+                                <span class="mr-1">&#128205;</span> Lihat di Google Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Cianjur Content (2 Cabang) -->
+                    <div id="content-cianjur" class="city-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        <!-- Cabang 1/2 Cianjur -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-primary-theme/20 flex flex-col justify-between">
+                            <div class="mb-4 overflow-hidden rounded-lg">
+                                <img src="https://placehold.co/1920x1080/000000/FFFFFF/png?text=Pixel+Barbershop+Interior" alt="Cabang Barbershop" class="w-full h-auto object-cover rounded-lg transition duration-500 transform hover:scale-105">
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-secondary-dark mb-2">Cianjur - Kota A (Pusat)</h3>
+                                <p class="text-gray-600 mb-4 text-sm">Jl. Raya Bandung KM 3, Cianjur</p>
+                                <p class="text-xs text-gray-500 mb-4">Buka: Senin - Sabtu (09:00 - 20:00)</p>
+                            </div>
+                            <a href="https://maps.app.goo.gl/bM5cT7xP8jE4wG2yH" target="_blank" class="text-primary-theme hover:text-secondary-dark text-sm font-medium flex items-center mt-auto">
+                                <span class="mr-1">&#128205;</span> Lihat di Google Maps
+                            </a>
+                        </div>
+                        <!-- Cabang 2/2 Cianjur -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-primary-theme/20 flex flex-col justify-between">
+                            <div class="mb-4 overflow-hidden rounded-lg">
+                                <img src="https://placehold.co/1920x1080/000000/FFFFFF/png?text=Pixel+Barbershop+Interior" alt="Cabang Barbershop" class="w-full h-auto object-cover rounded-lg transition duration-500 transform hover:scale-105">
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-secondary-dark mb-2">Cianjur - Cipanas</h3>
+                                <p class="text-gray-600 mb-4 text-sm">Ruko Cipanas Indah Blok C</p>
+                                <p class="text-xs text-gray-500 mb-4">Buka: Setiap Hari (10:00 - 21:00)</p>
+                            </div>
+                            <a href="https://maps.app.goo.gl/bM5cT7xP8jE4wG2yH" target="_blank" class="text-primary-theme hover:text-secondary-dark text-sm font-medium flex items-center mt-auto">
+                                <span class="mr-1">&#128205;</span> Lihat di Google Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Bogor Content (2 Cabang) -->
+                    <div id="content-bogor" class="city-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        <!-- Cabang 1/2 Bogor -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-primary-theme/20 flex flex-col justify-between">
+                            <div class="mb-4 overflow-hidden rounded-lg">
+                                <img src="https://placehold.co/1920x1080/000000/FFFFFF/png?text=Pixel+Barbershop+Interior" alt="Cabang Barbershop" class="w-full h-auto object-cover rounded-lg transition duration-500 transform hover:scale-105">
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-secondary-dark mb-2">Bogor - Pajajaran</h3>
+                                <p class="text-gray-600 mb-4 text-sm">Jl. Pajajaran No. 45, Bogor</p>
+                                <p class="text-xs text-gray-500 mb-4">Buka: Setiap Hari (09:00 - 20:00)</p>
+                            </div>
+                            <a href="https://maps.app.goo.gl/eP2vG4yJ6kL8mH9zX" target="_blank" class="text-primary-theme hover:text-secondary-dark text-sm font-medium flex items-center mt-auto">
+                                <span class="mr-1">&#128205;</span> Lihat di Google Maps
+                            </a>
+                        </div>
+                        <!-- Cabang 2/2 Bogor -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-primary-theme/20 flex flex-col justify-between">
+                            <div class="mb-4 overflow-hidden rounded-lg">
+                                <img src="https://placehold.co/1920x1080/000000/FFFFFF/png?text=Pixel+Barbershop+Interior" alt="Cabang Barbershop" class="w-full h-auto object-cover rounded-lg transition duration-500 transform hover:scale-105">
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-secondary-dark mb-2">Bogor - Sentul</h3>
+                                <p class="text-gray-600 mb-4 text-sm">Area Sentul City</p>
+                                <p class="text-xs text-gray-500 mb-4">Buka: Selasa - Minggu (10:00 - 21:00)</p>
+                            </div>
+                            <a href="https://maps.app.goo.gl/eP2vG4yJ6kL8mH9zX" target="_blank" class="text-primary-theme hover:text-secondary-dark text-sm font-medium flex items-center mt-auto">
+                                <span class="mr-1">&#128205;</span> Lihat di Google Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Malang Content (2 Cabang) -->
+                    <div id="content-malang" class="city-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        <!-- Cabang 1/2 Malang -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-primary-theme/20 flex flex-col justify-between">
+                            <div class="mb-4 overflow-hidden rounded-lg">
+                                <img src="https://placehold.co/1920x1080/000000/FFFFFF/png?text=Pixel+Barbershop+Interior" alt="Cabang Barbershop" class="w-full h-auto object-cover rounded-lg transition duration-500 transform hover:scale-105">
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-secondary-dark mb-2">Malang - Suhat</h3>
+                                <p class="text-gray-600 mb-4 text-sm">Jl. Soekarno Hatta No. 10, Malang</p>
+                                <p class="text-xs text-gray-500 mb-4">Buka: Setiap Hari (09:00 - 20:00)</p>
+                            </div>
+                            <a href="https://maps.app.goo.gl/mP7yX2zR9nT1aB6cV" target="_blank" class="text-primary-theme hover:text-secondary-dark text-sm font-medium flex items-center mt-auto">
+                                <span class="mr-1">&#128205;</span> Lihat di Google Maps
+                            </a>
+                        </div>
+                        <!-- Cabang 2/2 Malang -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-primary-theme/20 flex flex-col justify-between">
+                            <div class="mb-4 overflow-hidden rounded-lg">
+                                <img src="https://placehold.co/1920x1080/000000/FFFFFF/png?text=Pixel+Barbershop+Interior" alt="Cabang Barbershop" class="w-full h-auto object-cover rounded-lg transition duration-500 transform hover:scale-105">
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-secondary-dark mb-2">Malang - Tidar</h3>
+                                <p class="text-gray-600 mb-4 text-sm">Area Tidar Selatan</p>
+                                <p class="text-xs text-gray-500 mb-4">Buka: Senin - Sabtu (10:00 - 19:00)</p>
+                            </div>
+                            <a href="https://maps.app.goo.gl/mP7yX2zR9nT1aB6cV" target="_blank" class="text-primary-theme hover:text-secondary-dark text-sm font-medium flex items-center mt-auto">
+                                <span class="mr-1">&#128205;</span> Lihat di Google Maps
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Careers Section -->
+        <section id="careers" class="py-16 sm:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto">
+                    <h2 class="text-base font-semibold text-primary-theme uppercase tracking-wider">BERGABUNG DENGAN KAMI</h2>
+                    <p class="mt-2 text-3xl sm:text-4xl font-extrabold text-secondary-dark">Karir di Pixel Barbershop</p>
+                    <p class="mt-4 text-lg text-gray-600">
+                        Kami mencari talenta terbaik di bidang tata rambut pria yang bersemangat untuk memberikan pengalaman pelanggan yang tak tertandingi. Jika Anda siap meningkatkan karir Anda, kirimkan lamaran Anda!
+                    </p>
+                </div>
+
+                <!-- Posisi Terbuka -->
+                <div class="mt-12 space-y-6">
+                    <!-- Posisi 1 -->
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center bg-gray-50 p-6 rounded-lg shadow-md border-l-4 border-primary-theme">
+                        <div>
+                            <p class="text-xl font-semibold text-secondary-dark">Senior Barber / Stylist</p>
+                            <p class="text-gray-600 text-sm">Pengalaman minimal 3 tahun, menguasai teknik fade dan styling modern.</p>
+                        </div>
+                        <button class="mt-4 md:mt-0 px-6 py-2 bg-primary-theme text-white text-sm font-medium rounded-full hover:bg-secondary-dark transition duration-300 shadow-md">
+                            Apply Now
+                        </button>
+                    </div>
+
+                    <!-- Posisi 2 -->
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center bg-gray-50 p-6 rounded-lg shadow-md border-l-4 border-primary-theme">
+                        <div>
+                            <p class="text-xl font-semibold text-secondary-dark">Trainee Barber</p>
+                            <p class="text-gray-600 text-sm">Lulusan sekolah tata rambut atau memiliki portofolio dasar. Akan diberikan pelatihan intensif.</p>
+                        </div>
+                        <button class="mt-4 md:mt-0 px-6 py-2 bg-primary-theme text-white text-sm font-medium rounded-full hover:bg-secondary-dark transition duration-300 shadow-md">
+                            Apply Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="mt-10 text-center">
+                    <p class="text-gray-500 text-sm">Kirim CV Anda ke <a href="mailto:karir@pixelbarber.com" class="text-primary-theme hover:underline">karir@pixelbarber.com</a></p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 7. Academy Section (NEW) -->
+        <section id="academy" class="py-16 sm:py-24 bg-primary-theme/90">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-base font-semibold uppercase tracking-wider text-gray-200">PIXEL BARBERSHOP ACADEMY</h2>
+                    <p class="mt-2 text-3xl sm:text-4xl font-extrabold">Mulai Karir Cukur Anda Sekarang.</p>
+                    <p class="mt-4 text-lg font-light">
+                        Dapatkan pelatihan intensif dari master barber kami. Kami menyediakan kurikulum komprehensif mulai dari dasar hingga teknik styling dan perawatan rambut modern, siap mencetak talenta profesional.
+                    </p>
+                </div>
+
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-secondary-dark">
+                    <!-- Modul 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-xl transform transition duration-300 hover:scale-[1.03]">
+                        <div class="text-4xl text-primary-theme mb-3">
+                            &#9988; <!-- Scissors Icon -->
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Basic Masterclass</h3>
+                        <p class="text-sm text-gray-600">Pelatihan fundamental mencakup sanitasi, peralatan dasar, dan teknik cukur standar (fade, taper, classic cuts).</p>
+                    </div>
+                    <!-- Modul 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-xl transform transition duration-300 hover:scale-[1.03]">
+                        <div class="text-4xl text-primary-theme mb-3">
+                            &#9881; <!-- Chemical Icon -->
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Advanced Styling & Color</h3>
+                        <p class="text-sm text-gray-600">Fokus pada treatment rambut, pewarnaan (highlighting, balayage), dan styling fashion terkini.</p>
+                    </div>
+                    <!-- Modul 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-xl transform transition duration-300 hover:scale-[1.03]">
+                        <div class="text-4xl text-primary-theme mb-3">
+                            &#128188; <!-- Briefcase Icon -->
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Business & Management</h3>
+                        <p class="text-sm text-gray-600">Pelajari manajemen barbershop, layanan pelanggan superior, dan strategi pemasaran digital.</p>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border border-white text-base font-medium rounded-full text-primary-theme bg-white hover:bg-gray-200 shadow-lg transition duration-300 transform hover:scale-105">
+                        Daftar Akademi Sekarang
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Contact Us Section (UPDATED) -->
+        <section id="contact" class="py-16 sm:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto">
+                    <h2 class="text-base font-semibold uppercase tracking-wider text-primary-theme">HUBUNGI KAMI</h2>
+                    <p class="mt-2 text-3xl sm:text-4xl font-extrabold text-secondary-dark">Kami Siap Melayani Anda</p>
+                </div>
+                
+                <!-- Head Office Info & Map -->
+                <div class="mt-12 bg-primary-theme/10 p-6 sm:p-8 rounded-xl shadow-xl">
+                    <h3 class="text-2xl font-bold text-secondary-dark mb-4 text-center">Head Office - Kota Sukabumi</h3>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+                        <!-- Alamat dan Detail -->
+                        <div class="text-gray-700 space-y-3">
+                            <p class="flex items-start">
+                                <span class="text-primary-theme mr-3 mt-1">&#128205;</span> <!-- Map Pin Icon -->
+                                <strong>Alamat:</strong> Jl. R.A. Kosasih No.278, Subangjaya, Kec. Cikole, Kota Sukabumi, Jawa Barat 43116
+                            </p>
+                            <p class="flex items-start">
+                                <span class="text-primary-theme mr-3 mt-1">&#9742;</span> <!-- Phone Icon -->
+                                <strong>Telepon:</strong> (021) 123-4567
+                            </p>
+                            <p class="flex items-start">
+                                <span class="text-primary-theme mr-3 mt-1">&#9993;</span> <!-- Mail Icon -->
+                                <strong>Email:</strong> info@pixelbarber.com
+                            </p>
+                        </div>
+                        
+                        <!-- Google Maps Embed (Placeholder for actual map) -->
+                        <div class="w-full h-64 bg-gray-200 rounded-lg overflow-hidden shadow-inner">
+                            <iframe 
+                                class="w-full h-full border-0" 
+                                loading="lazy" 
+                                allowfullscreen 
+                                referrerpolicy="no-referrer-when-downgrade 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.5701833502914!2d106.91699927429107!3d-6.398642762649364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69b56f2f276295%3A0x6b80d0d867c0507a!2sJl.%20R.A.%20Kosasih%20No.278%2C%20Subangjaya%2C%20Kec.%20Cikole%2C%20Kota%20Sukabumi%2C%20Jawa%20Barat%2043116!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
+                            ></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="mt-12 max-w-lg mx-auto bg-gray-50 p-8 rounded-xl shadow-2xl border border-gray-200">
+                    <p class="text-center text-lg font-semibold text-secondary-dark mb-6">Kirim Pertanyaan atau Reservasi</p>
+                    <form action="#" method="POST" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
+                            <input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-primary-theme focus:border-primary-theme">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-primary-theme focus:border-primary-theme">
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700">Pesan Anda</label>
+                            <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-primary-theme focus:border-primary-theme"></textarea>
+                        </div>
+
+                        <div>
+                            <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-full shadow-lg text-base font-medium text-white bg-primary-theme hover:bg-secondary-dark transition duration-300 transform hover:scale-[1.01]">
+                                Kirim Pesan
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 9. Footer -->
+    <footer class="bg-secondary-dark text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-lg font-bold mb-2">Pixel Barbershop</p>
+            <p class="text-sm text-gray-400">&copy; 2025. All rights reserved. | Dibuat dengan Gaya Klasik.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#about" class="text-gray-400 hover:text-white transition duration-300">About</a>
+                <a href="#services" class="text-gray-400 hover:text-white transition duration-300">Services</a>
+                <a href="#cabang" class="text-gray-400 hover:text-white transition duration-300">Cabang</a>
+                <a href="#academy" class="text-gray-400 hover:text-white transition duration-300">Academy</a>
+                <a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Kontak</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript untuk fungsionalitas menu mobile dan tab cabang -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = mobileMenu.querySelectorAll('a');
+
+            // --- Mobile Menu Toggle ---
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Sembunyikan menu saat link di klik (untuk navigasi)
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+
+            // --- Cabang Tab Switching Logic ---
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const cityContents = document.querySelectorAll('.city-content');
+
+            function switchTab(cityId) {
+                // Hapus styling aktif dari semua tombol
+                tabButtons.forEach(button => {
+                    button.classList.remove('border-primary-theme', 'text-primary-theme');
+                    button.classList.add('border-transparent', 'text-gray-500', 'hover:border-gray-500', 'hover:text-secondary-dark');
+                });
+
+                // Sembunyikan semua konten kota
+                cityContents.forEach(content => {
+                    content.classList.add('hidden');
+                });
+
+                // Tambahkan styling aktif ke tombol yang diklik
+                const activeTab = document.getElementById(`tab-${cityId}`);
+                if (activeTab) {
+                    activeTab.classList.add('border-primary-theme', 'text-primary-theme');
+                    activeTab.classList.remove('border-transparent', 'text-gray-500', 'hover:border-gray-500', 'hover:text-secondary-dark');
+                }
+
+                // Tampilkan konten kota yang sesuai
+                const activeContent = document.getElementById(`content-${cityId}`);
+                if (activeContent) {
+                    activeContent.classList.remove('hidden');
+                }
+            }
+
+            // Tambahkan event listeners ke tombol tab
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const cityId = button.getAttribute('data-city');
+                    switchTab(cityId);
+                });
+            });
+
+            // Set tab awal aktif (Sukabumi)
+            switchTab('sukabumi');
+
+
+            // --- Form Submission Simulation ---
+            const contactForm = document.querySelector('#contact form');
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const formMessage = document.createElement('p');
+                formMessage.className = 'mt-4 text-center text-sm font-semibold text-primary-theme';
+                formMessage.textContent = 'Terima kasih! Pesan Anda telah kami terima (Simulasi submit form).';
+                
+                const existingMessage = contactForm.parentNode.querySelector('.text-primary-theme.font-semibold');
+                if (existingMessage) {
+                    existingMessage.remove();
+                }
+
+                contactForm.after(formMessage);
+                contactForm.reset();
+            });
+        });
+    </script>
+
+</body>
+</html>
